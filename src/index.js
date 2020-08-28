@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Button from './components/Button';
 import * as serviceWorker from './serviceWorker';
+
+const texts = {val: 'click'}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <Button {...texts } /> */}
+    <Button texts="hola" />
+    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
