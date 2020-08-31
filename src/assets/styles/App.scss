@@ -1,5 +1,12 @@
-body{
+@import './Vars.scss';
+
+body {
   margin: 0;
-  color: white;
-  background-color: red;
+  background: var(--main-color);
+  font-family: var(--font);
 }
+
+* {
+  box-sizing: border-box;
+}
+
