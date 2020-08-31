@@ -14,7 +14,6 @@ const API = 'http://localhost:3000/initalState/';
 
 const App = () => {
   const initialState = useInitialState(API);
-  console.log(initialState);
 
   return (
     <div className="App">
@@ -24,20 +23,20 @@ const App = () => {
       {initialState.mylist.length > 0 && (
         <Categories title="Mi Lista">
           <Carousel>
-            <CarouselItem />
+            {initialState.mylist.map((item) => <CarouselItem key={item.id} {...item} />)}
           </Carousel>
         </Categories>
       )}
 
-      <Categories title="Originals">
-        <Carousel>
-          {initialState.trends.map((item) => <CarouselItem key={item.id} {...item} />)}
-        </Carousel>
-      </Categories>
-
       <Categories title="Tendencias">
         <Carousel>
           {initialState.originals.map((item) => <CarouselItem key={item.id} {...item} />)}
+        </Carousel>
+      </Categories>
+
+      <Categories title="Originals de platzi video">
+        <Carousel>
+          {initialState.trends.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
 

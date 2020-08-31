@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import playIcon from '../assets/static/plus-icon.png';
 import plusIcon from '../assets/static/play-icon.png';
@@ -18,6 +19,14 @@ const CarouelItem = ({ cover, title, year, contentRaiting, duration }) => {
       </div>
     </div>
   );
+};
+
+CarouelItem.propTypes = {
+  cover: PropTypes.string,
+  title: PropTypes.string,
+  year: PropTypes.number,
+  contentRaiting: PropTypes.string,
+  duration: PropTypes.number,
 };
 
 export default CarouelItem;
